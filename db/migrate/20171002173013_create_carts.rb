@@ -4,6 +4,8 @@ class CreateCarts < ActiveRecord::Migration[5.1]
       t.column(:tag, :string)
       t.column(:gp_id, :string)
       t.column(:is_confirmed, :boolean)
+
+      t.timestamp
     end
   end
 end

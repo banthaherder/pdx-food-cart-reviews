@@ -7,6 +7,7 @@ class CreateReviews < ActiveRecord::Migration[5.1]
       t.column(:price, :string)
       t.column(:rating, :integer)
       t.column(:reported_count, :integer)
+      t.column(:review, :string)
 
       t.timestamp
     end
