@@ -1,4 +1,4 @@
-class Review
-  belongs_to: carts
-  belongs_to: users
+class Review < ActiveRecord::Base
+  belongs_to :cart
+  belongs_to :user
 end
