@@ -11,10 +11,13 @@ require('./app')
 
 RSpec.configure do |config|
   config.after(:each) do
-    Store.all().each() do |x|
+    Cart.all().each() do |x|
       x.destroy()
     end
-    Brand.all().each() do |x|
+    User.all().each() do |x|
+      x.destroy()
+    end
+    Review.all().each() do |x|
       x.destroy()
     end
   end
