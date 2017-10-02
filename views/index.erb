@@ -1,0 +1,13 @@
+<h1>Featured Reviews:</h1>
+<% @featured_reviews.each do |review| %>
+  <h3><%= review.carts.name %></h3>
+  <p><% review.review %></p>
+  <% end %>
+
+<h1>Today's deals:</h1>
+  <% @featured_reviews.each do |review| %>
+  <h3><% review.carts.name %></h3>
+  <h4><% review.food_name %></h4>
+  <p><%= review.price %></p>
+
+<h1>Map of our reviewed foodcarts:</h1>
