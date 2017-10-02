@@ -1,0 +1,10 @@
+<h1>CART NAME</h1>
+
+<% if @reviews.any? %>
+<ul>
+  <% @reviews.each do |review| %>
+    <li><%= review.review %></li>
+  <% end %>
+<% else %>
+<h3>No reviews yet</h3>
+<%end%>
