@@ -9,6 +9,8 @@ get('/') do
   erb(:index)
 end
 
-get('/:cart_id/review/:review_id/') do
-  
+get('/cart/:id') do
+  @cart = Cart.find(params['id'])
+  @reviews = @cart.reviews
+  erb(:cart)
 end

@@ -1,0 +1,24 @@
+<h1>CART NAME</h1>
+
+<% if @reviews.any? %>
+<ul>
+  <% @reviews.each do |review| %>
+    <li><%= review.review %></li>
+  <% end %>
+<% else %>
+<h3>No reviews yet, Add one!</h3>
+<%end%>
+
+<form action="/cart/<%=cart.id%>" method="post">
+  <div class="form-group">
+    <label>Food: </label>
+    <input name="food" class="form-control" type="text">
+  </div>
+  <div class="form-group">
+    <label>Price: </label>
+    <input name="price" class="form-control" type="text">
+  </div>
+  <div class="form-group">
+    <label for="amount">Review: </label>
+    <textarea class="form-control" name="review" rows="3"></textarea>
+  </div>
