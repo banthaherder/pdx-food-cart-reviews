@@ -1,0 +1,6 @@
+development:
+  adapter: postgresql
+  database: food_cart_development
+test:
+  adapter: postgresql
+  database: food_cart_test
