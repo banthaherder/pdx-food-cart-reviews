@@ -3,7 +3,7 @@
     <% @featured_reviews.each do |review| %>
       <h3><%= review.cart.id %></h3>
       <p><%= review.rating %></p>
-      <p><a href="/carts/<%= review.cart.id %>">View Cart Deats</a>
+      <p><a href="/cart/<%= review.cart.id %>">View Cart Deats</a>
       <% end %>
 
     <h1>Today's deals:</h1>

@@ -6,5 +6,19 @@
     <li><%= review.review %></li>
   <% end %>
 <% else %>
-<h3>No reviews yet</h3>
+<h3>No reviews yet, Add one!</h3>
 <%end%>
+
+<form action="/cart/<%=cart.id%>" method="post">
+  <div class="form-group">
+    <label>Food: </label>
+    <input name="food" class="form-control" type="text">
+  </div>
+  <div class="form-group">
+    <label>Price: </label>
+    <input name="price" class="form-control" type="text">
+  </div>
+  <div class="form-group">
+    <label for="amount">Review: </label>
+    <textarea class="form-control" name="review" rows="3"></textarea>
+  </div>
