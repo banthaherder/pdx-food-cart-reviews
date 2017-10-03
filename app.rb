@@ -4,8 +4,6 @@ enable :sessions
 
 Dir[File.dirname(__FILE__) + '/lib/*.rb'].each { |file| require file }
 
-@@client = GooglePlaces::Client.new('AIzaSyDGlceW7yZG05uKfRqWqTHC3mg8Tlfw54w')
-
 get('/') do
   @featured_reviews = Review.all.where("rating >= 4").sample(3)
   erb(:index)

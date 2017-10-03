@@ -5,7 +5,7 @@
       <% if @featured_reviews.any? %>
         <% @featured_reviews.each do |review| %>
           <div class="white-text">
-            <h3><strong><%= @@client.spot(review.cart.gp_id).name %></strong></h3>
+            <h3><strong><%= review.cart.name %></strong></h3>
             <p><%= '⭐' * review.rating.to_i %></p>
           </div>
           <p><a class="btn btn-ghost" href="/cart/<%= review.cart.id %>">View Cart</a>
@@ -16,7 +16,7 @@
     <div class="white-text">
       <h1>Today's deals:</h1>
         <% @featured_reviews.each do |review| %>
-        <h3> <a class="no-underline" href="/cart/<%= review.cart.id %>"><%= @@client.spot(review.cart.gp_id).name %></a></h3>
+        <h3> <a class="no-underline" href="/cart/<%= review.cart.id %>"><%= review.cart.name %></a></h3>
         <h3><%= review.price %> | <%= review.food_name %> </h3>
         <br>
         <% end %>
