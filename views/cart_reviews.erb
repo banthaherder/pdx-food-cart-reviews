@@ -1,5 +1,11 @@
 <h1><%= @cart.name%></h1>
+<img src="<%= @cart.pic %>">
 <h3 class="white-text" ><%=@cart.tag%></h3>
+<ul>
+  <% @cart.hours.each do |d| %>
+    <li class="white-text"><%= d %></li>
+  <% end %>
+</ul>
 <% if @reviews.any? %>
 <ul class="white-text">
   <% @reviews.each do |review| %>

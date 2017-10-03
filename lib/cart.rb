@@ -9,6 +9,10 @@ class Cart < ActiveRecord::Base
   end
 
   def hours()
-    GooglePlaces::Client.new('AIzaSyDGlceW7yZG05uKfRqWqTHC3mg8Tlfw54w').spot(self.gp_id).opening_hours["weekday_text"][0]
+    GooglePlaces::Client.new('AIzaSyDGlceW7yZG05uKfRqWqTHC3mg8Tlfw54w').spot(self.gp_id).opening_hours["weekday_text"]
+  end
+
+  def pic()
+    GooglePlaces::Client.new('AIzaSyDGlceW7yZG05uKfRqWqTHC3mg8Tlfw54w').spot(self.gp_id).photos.sample(1).first.fetch_url(100)
   end
 end
