@@ -28,6 +28,10 @@ private
   end
 end
 
+Cart.destroy_all
+User.destroy_all
+Review.destroy_all
+
 gyro_cart = Cart.create({:gp_id => "ChIJ6SGO1AUKlVQRdB7wYgNb7HA", :is_confirmed => true, :tag => "Middle Eastern"})
 thai_cart = Cart.create({:gp_id => "ChIJKXJu4sRylVQRMqGPudpnMR8", :is_confirmed => true, :tag => "thai"})
 dump_cart = Cart.create({gp_id: "ChIJwQw6YgMKlVQRjbynzzv0MN8", :is_confirmed => true, :tag => "Chinese American"})
