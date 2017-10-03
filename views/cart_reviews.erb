@@ -1,17 +1,20 @@
-<h1>CART NAME</h1>
-<h3><%=@cart.tag%></h3>
+<h1><%= @@client.spot(@cart.gp_id).name%></h1>
+<h3 class="white-text" ><%=@cart.tag%></h3>
 <% if @reviews.any? %>
-<ul>
+<ul class="white-text">
   <% @reviews.each do |review| %>
     <li><%= review.food_name %></li>
       <ul>
         <li><%= review.price %></li>
         <li><%= review.rating %></li>
         <li><%= review.review %></li>
+        <li><%= review.user.name %></li>
       </ul>
+      <br>
   <% end %>
+</ul>
 <% else %>
 <h3>No reviews yet, Add one!</h3>
 <%end%>
 
-<a href = "/review/<%=@cart.id%>">Add a review!</a>
+<a class="btn btn-ghost" href = "/review/<%=@cart.id%>">Add a review!</a>

@@ -7,6 +7,7 @@ gem 'pg'
 gem 'sinatra'
 gem 'bcrypt'
 gem 'google_places'
+gem 'pry'
 
 group:test do
   gem 'rspec'
