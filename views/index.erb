@@ -1,7 +1,7 @@
   <h1>Featured Reviews:</h1>
   <% if @featured_reviews.any? %>
     <% @featured_reviews.each do |review| %>
-      <h3><%= @client.spot(review.cart.gp_id).name %></h3>
+      <h3><%= @@client.spot(review.cart.gp_id).name %></h3>
       <p><%= review.rating %></p>
       <p><a href="/cart/<%= review.cart.id %>">View Cart Deats</a>
       <% end %>
