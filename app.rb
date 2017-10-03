@@ -9,8 +9,25 @@ get('/') do
   erb(:index)
 end
 
+get('/cart') do
+  @carts = Cart.all
+  erb(:cart)
+end
+
 get('/cart/:id') do
   @cart = Cart.find(params['id'])
+  @reviews = @cart.reviews
+  erb(:cart_reviews)
+end
+
+get('/review/:cart_id') do
+  @cart = Cart.find(params['cart_id'])
+  erb(:new_review)
+end
+
+post('/review/:cart_id') do
+  Review.create(food_name: params['food'], price: params['price'], review: params['review'], cart_id: params['cart_id'], rating: params['rating'])
+  @cart = Cart.find(params['cart_id'])
   @reviews = @cart.reviews
   erb(:cart)
 end
