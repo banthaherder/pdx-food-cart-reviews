@@ -696,3 +696,7 @@ strong{
 .no-underline{
   border: none !important;
 }
+
+ul {
+  list-style-type: none;
+}
