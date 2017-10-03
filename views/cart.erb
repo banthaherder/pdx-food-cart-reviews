@@ -1,5 +1,5 @@
 <h1>Carts</h1>
 
 <% @carts.each do |cart| %>
-  <p><a href = "/cart/<%=cart.id%>"><%=cart.name%></a></p>
+  <p><a class="no-underline" href = "/cart/<%=cart.id%>"><%=cart.name%></a></p>
 <%end%>
