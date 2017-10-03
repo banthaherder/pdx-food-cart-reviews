@@ -1,25 +1,27 @@
-<h1>CART NAME</h1>
-
+<h1><%= @@client.spot(@cart.gp_id).name%></h1>
+<div class="white-text">
 <form action="/review/<%=@cart.id%>" method="post">
   <div class="form-group">
     <label>Food: </label>
-    <input name="food" class="form-control" type="text">
+    <input name="food" class="form-control transparent" type="text" required>
   </div>
   <div class="form-group">
     <label>Price: </label>
-    <input name="price" class="form-control" type="text">
+    <input name="price" class="form-control transparent" type="text" required>
   </div>
   <div class="form-group">
     <label for="amount">Review: </label>
-    <textarea class="form-control" name="review" rows="3"></textarea>
+    <textarea class="form-control transparent" name="review" rows="3"></textarea>
   </div>
   <div class ="form-group">
     <label for="rating">Rating: </label>
-    <select name = "rating">
-      <option value = "1">1</option>
-      <option value = "2">2</option>
-      <option value = "3">3</option>
-      <option value = "4">4</option>
-      <option value = "5">5</option>
+    <select class="transparent" name = "rating">
+      <option value = "1">⭐</option>
+      <option value = "2">⭐⭐</option>
+      <option value = "3">⭐⭐⭐</option>
+      <option value = "4">⭐⭐⭐⭐</option>
+      <option value = "5">⭐⭐⭐⭐⭐</option>
     </select>
-  <button type = "submit">Submit</button>
+  </div>
+</div>
+  <button class="btn btn-full" type = "submit">Submit</button>

@@ -4,7 +4,7 @@ enable :sessions
 
 Dir[File.dirname(__FILE__) + '/lib/*.rb'].each { |file| require file }
 
-@@client = GooglePlaces::Client.new('AIzaSyAaN83hTHVzlAMvkBd4oc3NGFm4YQ-K71I')
+@@client = GooglePlaces::Client.new('AIzaSyDGlceW7yZG05uKfRqWqTHC3mg8Tlfw54w')
 
 get('/') do
   @featured_reviews = Review.all.where("rating >= 4").sample(3)
@@ -31,5 +31,6 @@ post('/review/:cart_id') do
   Review.create(food_name: params['food'], price: params['price'], review: params['review'], cart_id: params['cart_id'], rating: params['rating'])
   @cart = Cart.find(params['cart_id'])
   @reviews = @cart.reviews
+  @carts = Cart.all
   erb(:cart)
 end
