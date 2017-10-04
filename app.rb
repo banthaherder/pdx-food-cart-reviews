@@ -32,3 +32,8 @@ post('/review/:cart_id') do
   @carts = Cart.all
   erb(:cart)
 end
+
+get('/review/view/:review_id') do
+  @review = Review.find(params['review_id'])
+  erb(:review)
+end
