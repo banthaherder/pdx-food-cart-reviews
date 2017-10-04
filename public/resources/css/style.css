@@ -717,7 +717,13 @@ ul {
 }
 
 
+.space {
+  margin: 55px;
+}
 
+.food-album{
+  max-width: 350px;
+}
 /* Fancy Stars */
 
 div.stars {
