@@ -29,7 +29,6 @@ post '/sign_in' do
     redirect '/'
   else
     @error = 'Username or password was incorrect'
-    binding.pry
     erb :sign_in
   end
 end
