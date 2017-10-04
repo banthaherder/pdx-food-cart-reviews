@@ -45,7 +45,18 @@ get('/') do
   erb(:index)
 end
 
-get('/cart') do
+get '/cart_checker/:gp_id' do
+  cart = Cart.find {|c| c.gp_id == params[:gp_id]}
+  if cart != nil
+    redirect "/cart/#{cart.id}"
+  else
+    quick_add = Cart.new({:gp_id => params[:gp_id], :is_confirmed => true, :tag => nil})
+    quick_add.save
+    redirect "/cart/#{quick_add.id}"
+  end
+end
+
+get('/carts') do
   @carts = Cart.all
   erb(:cart)
 end
@@ -61,12 +72,12 @@ post '/cart/:id' do
 end
 
 post "/results" do
-  redirect "/results/#{params["search"]}"
+  redirect "/results/#{params["search"].split(" ").join("_")}"
 end
 
 
 get '/results/:search' do
-  @results = GooglePlaces::Client.new('AIzaSyAaN83hTHVzlAMvkBd4oc3NGFm4YQ-K71I').spots_by_query(params[:search] + ' food cart Portland Oregon')
+  @results = GooglePlaces::Client.new('AIzaSyAaN83hTHVzlAMvkBd4oc3NGFm4YQ-K71I').spots_by_query(params[:search].split(" ").join("_") + ' food cart Portland Oregon')
   erb :results
 end
 
