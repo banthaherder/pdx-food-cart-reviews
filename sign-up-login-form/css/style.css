@@ -18,7 +18,7 @@ a {
   transition: .5s ease;
 }
 a:hover {
-  color: #179b77;
+  color: white;
 }
 
 .form {
@@ -121,7 +121,7 @@ input, textarea {
 }
 input:focus, textarea:focus {
   outline: 0;
-  border-color: #e67e22;
+  border-color: #F38C36;
 }
 
 textarea {
