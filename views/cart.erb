@@ -1,24 +1,28 @@
-<h1>Carts</h1>
-
-<form action="/cart/:id" method="post">
-  <div class="form-group">
-    <label for="cart">Select an existing cart:</label>
-    <select name="cart" class="form-control">
-      <% @carts.each do |cart| %>
-        <option value="<%= cart.id %>"><%=cart.name%></option>
-      <%end%>
-    </select>
-  </div>
-  <button class="btn btn-success" type="submit">Select</button>
-</form>
-
-<h3>OR</h3>
 
 
-<form action="/results" method="post">
+<div class="container">
+<h1>Carts</h1> 
+  <form action="/cart/:id" method="post">
+    <div class="form-group">
+      <label for="cart" class="white-text">Select an existing cart:</label>
+      <select name="cart" class="form-control">
+        <% @carts.each do |cart| %>
+          <option value="<%= cart.id %>"><%=cart.name%></option>
+        <%end%>
+      </select>
+    </div>
+    <button class="btn btn-orange white-text" type="submit">Select</button>
+  </form>
+  <br>
+  <h3 class="white-text">OR</h3>
 
-  <div class="form-group">
-    <input class="form-control" name="search" type="text"/>
-  </div>
-  <button class="btn btn-success" type="submit">Search</button>
-</form>
+
+  <form action="/results" method="post">
+
+    <div class="form-group">
+      <input class="form-control" name="search" type="text"/>
+    </div>
+    <button class="btn btn-orange white-text" type="submit">Search</button>
+  </form>
+
+</div>
