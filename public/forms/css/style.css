@@ -79,6 +79,8 @@ label {
   -webkit-transform: translateY(6px);
           transform: translateY(6px);
   left: 13px;
+
+  bottom: 0px;
   color: rgba(255, 255, 255, 0.5);
   -webkit-transition: all 0.25s ease;
   transition: all 0.25s ease;
@@ -114,19 +116,23 @@ input, textarea {
   background: none;
   background-image: none;
   border: 1px solid #a0b3b0;
-  color: #ffffff;
+  color: rgba(255, 255, 255, 1);
+  opacity: 1;
   border-radius: 0;
   -webkit-transition: border-color .25s ease, box-shadow .25s ease;
   transition: border-color .25s ease, box-shadow .25s ease;
 }
+
 input:focus, textarea:focus {
   outline: 0;
   border-color: #F38C36;
+  color: rgba(255,255,255, 1);
 }
 
 textarea {
   border: 2px solid #a0b3b0;
   resize: vertical;
+
 }
 
 .field-wrap {
