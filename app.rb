@@ -93,3 +93,10 @@ get('/review/view/:review_id') do
   @review = Review.find(params['review_id'])
   erb(:review)
 end
+
+post '/user' do
+  name = params['first_name'] + " " + params['last_name']
+  user = User.new(name: name, email: params['email'], username: params['username'], pass: params['password'])
+  user.save
+  redirect '/'
+end
