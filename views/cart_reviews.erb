@@ -9,13 +9,8 @@
 <% if @reviews.any? %>
 <ul class="white-text">
   <% @reviews.each do |review| %>
-    <li><%= review.food_name %></li>
-      <ul>
-        <li><%= review.price %></li>
-        <li><%= review.rating %></li>
-        <li><%= review.review %></li>
-        <li><%= review.user.name %></li>
-      </ul>
+    <li><a href = "/review/view/<%=review.id%>"><%= review.food_name %></a></li>
+    <li><%= review.price %></li>
       <br>
   <% end %>
 </ul>
