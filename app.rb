@@ -22,12 +22,13 @@ end
 
 post '/sign_in' do
   user = User.find { |u| u.username == params["username"] }
-  if user && user.auth_pass(params["pass"], user.pass)
+  if user && user.auth_pass(params["pass"])
     # session.clear
     session[:user_id] = user.id
     redirect '/'
   else
     @error = 'Username or password was incorrect'
+    binding.pry
     erb :sign_in
   end
 end
