@@ -31,7 +31,7 @@ private
   def get_address()
     self.address=(GooglePlaces::Client.new('AIzaSyAaN83hTHVzlAMvkBd4oc3NGFm4YQ-K71I').spot(self.gp_id).formatted_address)
   end
-
+  
   def get_lat()
     self.lat=(GooglePlaces::Client.new('AIzaSyAaN83hTHVzlAMvkBd4oc3NGFm4YQ-K71I').spot(self.gp_id).lat)
   end

@@ -6,7 +6,7 @@ class User < ActiveRecord::Base
 
   # Public method that authenticates passwords
   def auth_pass(password)
-    BCrypt::Password.create(password) == self.hash_pass
+    BCrypt::Password.new(self.pass) == password
   end
 
 private
