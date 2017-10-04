@@ -65,7 +65,7 @@ get '/results/:search' do
   erb :results
 end
 post '/cart/new' do
-  redirect "/results/#{params["search"]}"
+  redirect "/results/#{params['search']}"
 end
 
 get('/review/:cart_id') do
