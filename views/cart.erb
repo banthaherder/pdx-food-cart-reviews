@@ -2,7 +2,7 @@
 
 <form action="/cart/:id" method="post">
   <div class="form-group">
-    <label for="cart">Select an existing cart:</form>
+    <label for="cart">Select an existing cart:</label>
     <select name="cart" class="form-control">
       <% @carts.each do |cart| %>
         <option value="<%= cart.id %>"><%=cart.name%></option>
