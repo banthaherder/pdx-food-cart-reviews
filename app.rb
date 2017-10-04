@@ -41,6 +41,7 @@ get '/sign_out' do
 end
 
 get('/') do
+  @carts = Cart.all
   @featured_reviews = Review.all.where("rating >= 4").sample(3)
   erb(:index)
 end
