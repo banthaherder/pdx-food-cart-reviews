@@ -6,7 +6,7 @@
         <% @featured_reviews.each do |review| %>
           <div class="white-text">
             <h3><strong><%= review.cart.name %></strong></h3>
-            <p><%= '⭐' * review.rating.to_i %></p>
+            <p><%= ' ⭐' * review.rating.to_i %></p>
           </div>
           <p><a class="btn btn-ghost" href="/cart/<%= review.cart.id %>">View Cart</a>
           <% end %>
