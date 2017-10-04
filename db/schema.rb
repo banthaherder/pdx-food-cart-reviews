@@ -19,6 +19,11 @@ ActiveRecord::Schema.define(version: 20171002173013) do
     t.string "tag"
     t.string "gp_id"
     t.boolean "is_confirmed"
+    t.string "name"
+    t.string "hours"
+    t.string "photos"
+    t.string "phone_number"
+    t.string "address"
   end
 
   create_table "reviews", force: :cascade do |t|

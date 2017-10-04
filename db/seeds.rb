@@ -1,8 +1,37 @@
 require 'bcrypt'
-
+require 'google_places'
 class Cart < ActiveRecord::Base
   has_many :reviews
   has_many :users, through: :reviews
+  # AIzaSyAaN83hTHVzlAMvkBd4oc3NGFm4YQ-K71I
+  # 'AIzaSyDGlceW7yZG05uKfRqWqTHC3mg8Tlfw54w'
+
+  before_save(:get_name, :get_hours, :get_photos, :get_phone_number, :get_address)
+
+  def pic()
+    photos.sample(1).first.fetch_url(800)
+  end
+
+private
+  def get_name()
+    self.name=(GooglePlaces::Client.new('AIzaSyDGlceW7yZG05uKfRqWqTHC3mg8Tlfw54w').spot(self.gp_id).name.to_s)
+  end
+
+  def get_hours()
+    self.hours=(GooglePlaces::Client.new('AIzaSyDGlceW7yZG05uKfRqWqTHC3mg8Tlfw54w').spot(self.gp_id).opening_hours["weekday_text"])
+  end
+
+  def get_photos()
+    self.photos=(GooglePlaces::Client.new('AIzaSyDGlceW7yZG05uKfRqWqTHC3mg8Tlfw54w').spot(self.gp_id).photos)
+  end
+
+  def get_phone_number()
+    self.phone_number=(GooglePlaces::Client.new('AIzaSyDGlceW7yZG05uKfRqWqTHC3mg8Tlfw54w').spot(self.gp_id).formatted_phone_number)
+  end
+
+  def get_address()
+    self.address=(GooglePlaces::Client.new('AIzaSyDGlceW7yZG05uKfRqWqTHC3mg8Tlfw54w').spot(self.gp_id).formatted_address)
+  end
 end
 
 class Review < ActiveRecord::Base
@@ -32,9 +61,12 @@ Cart.destroy_all
 User.destroy_all
 Review.destroy_all
 
-gyro_cart = Cart.create({:gp_id => "ChIJ6SGO1AUKlVQRdB7wYgNb7HA", :is_confirmed => true, :tag => "Middle Eastern"})
-thai_cart = Cart.create({:gp_id => "ChIJKXJu4sRylVQRMqGPudpnMR8", :is_confirmed => true, :tag => "thai"})
-dump_cart = Cart.create({gp_id: "ChIJwQw6YgMKlVQRjbynzzv0MN8", :is_confirmed => true, :tag => "Chinese American"})
+gyro_cart = Cart.new({:gp_id => "ChIJ6SGO1AUKlVQRdB7wYgNb7HA", :is_confirmed => true, :tag => "Middle Eastern", :name => nil, :phone_number => nil, :address => nil, :photos => nil, :hours => nil})
+thai_cart = Cart.new({:gp_id => "ChIJKXJu4sRylVQRMqGPudpnMR8", :is_confirmed => true, :tag => "thai"})
+dump_cart = Cart.new({gp_id: "ChIJwQw6YgMKlVQRjbynzzv0MN8", :is_confirmed => true, :tag => "Chinese American"})
+gyro_cart.save
+thai_cart.save
+dump_cart.save
 
 new_user1 = User.new({:name => "Harry", :username => "bigfoot", :pass => "12345", :email => "test1@test.com", :is_confirmed => true, :is_admin => false})
 new_user2 = User.new({:name => "April", :username => "banana", :pass => "12345", :email => "test2@test.com", :is_confirmed => true, :is_admin => true})
