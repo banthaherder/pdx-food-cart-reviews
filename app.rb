@@ -74,3 +74,8 @@ post('/review/:cart_id') do
     redirect '/sign_in'
   end
 end
+
+get('/review/view/:review_id') do
+  @review = Review.find(params['review_id'])
+  erb(:review)
+end
