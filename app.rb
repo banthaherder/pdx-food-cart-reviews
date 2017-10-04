@@ -79,7 +79,7 @@ end
 
 post('/review/:cart_id') do
   if current_user
-    Review.create(food_name: params['food'], price: params['price'], review: params['review'], cart_id: params['cart_id'], rating: params['rating'])
+    Review.create(food_name: params['food'], price: params['price'], review: params['review'], cart_id: params['cart_id'], rating: params['rating'], user_id: current_user.id)
     @cart = Cart.find(params['cart_id'])
     @reviews = @cart.reviews
     @carts = Cart.all
