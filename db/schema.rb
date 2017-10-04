@@ -24,6 +24,8 @@ ActiveRecord::Schema.define(version: 20171002173013) do
     t.string "photos"
     t.string "phone_number"
     t.string "address"
+    t.string "lat"
+    t.string "lng"
   end
 
   create_table "reviews", force: :cascade do |t|

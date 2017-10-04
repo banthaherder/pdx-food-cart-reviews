@@ -56,6 +56,18 @@ get('/cart/:id') do
   erb(:cart_reviews)
 end
 
+post '/cart/:id' do
+  redirect "/cart/#{params["cart"]}"
+end
+
+get '/results/:search' do
+  @results = GooglePlaces::Client.new('AIzaSyAaN83hTHVzlAMvkBd4oc3NGFm4YQ-K71I').spots_by_query(params[:search]' food cart Portland Oregon')
+  erb :results
+end
+post '/cart/new' do
+  redirect "/results/#{params["search"]}"
+end
+
 get('/review/:cart_id') do
   if current_user
     @cart = Cart.find(params['cart_id'])

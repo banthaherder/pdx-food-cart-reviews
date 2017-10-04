@@ -9,6 +9,8 @@ class CreateCarts < ActiveRecord::Migration[5.1]
       t.column(:photos, :string)
       t.column(:phone_number, :string)
       t.column(:address, :string)
+      t.column(:lat, :string)
+      t.column(:lng, :string)
       
       t.timestamp
     end
