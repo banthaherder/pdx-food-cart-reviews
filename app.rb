@@ -1,5 +1,6 @@
 require("bundler/setup")
 Bundler.require(:default)
+require("pry")
 # sessions provide a way to keep track of who's logged in
 enable :sessions
 
