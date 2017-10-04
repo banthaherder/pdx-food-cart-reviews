@@ -8,9 +8,9 @@ class Cart < ActiveRecord::Base
 
   before_save(:get_name, :get_hours, :get_photos, :get_phone_number, :get_address)
 
-  def pic()
-    photos.sample(1).first.fetch_url(800)
-  end
+  # def pic()
+  #   photos.split(",").sample(1).first.fetch_url(800)
+  # end
 
 private
   def get_name()

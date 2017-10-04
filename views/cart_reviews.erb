@@ -2,7 +2,7 @@
 <img src="<%= @cart.pic %>">
 <h3 class="white-text" ><%=@cart.tag%></h3>
 <ul>
-  <% @cart.hours.each do |d| %>
+  <% eval(@cart.hours).each do |d| %>
     <li class="white-text"><%= d %></li>
   <% end %>
 </ul>
