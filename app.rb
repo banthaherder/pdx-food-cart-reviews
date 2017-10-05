@@ -124,11 +124,12 @@ end
 patch '/edit/:review_id' do
   if current_user
     review = Review.find(params[:review_id])
-    if params['rating'] == nil
-      params['rating'] = review.rating
-    end
-      review.update(food_name: params['food'], price: params['price'], review: params['review'], rating: params['rating'])
-      redirect "/#{current_user.id}/reviews"
+    # CODE that protected unselected stars on a review update
+    # if params['rating'] == nil
+    #   params['rating'] = review.rating
+    # end
+    review.update(food_name: params['food'], price: params['price'], review: params['review'], rating: params['rating'])
+    redirect "/#{current_user.id}/reviews"
   else
     redirect '/sign_in'
   end
