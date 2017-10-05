@@ -2,6 +2,7 @@ class User < ActiveRecord::Base
   has_many :reviews
   has_many :carts, through: :reviews
 
+  validates(:username, {:presence => true, :length => {:maximum => 30}, uniqueness: { case_sensitive: false }})
   before_save(:hash_pass)
 
   # Public method that authenticates passwords

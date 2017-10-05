@@ -4,6 +4,13 @@
 <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
 <link rel="stylesheet" href="/forms/css/style.css">
 
+<% if @errors %>
+  <% @errors.each() do |message| %>
+    <div class="alert alert-danger" role="alert">
+      <li><%= message %></li>
+    </div>
+  <% end %>
+<% end %>
 
 <div class="form">
 
