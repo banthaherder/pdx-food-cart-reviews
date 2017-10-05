@@ -1,6 +1,7 @@
+<p class = "white-text">Welcome, <% if current_user %> <%= current_user.name %> <% else %> Please log in! <% end %></p>
+
 <div class="row">
   <div class="col-md-6 justify-content-right">
-
       <h1>Featured Reviews:</h1>
       <% if @featured_reviews.any? %>
         <% @featured_reviews.each do |review| %>
