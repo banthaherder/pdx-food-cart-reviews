@@ -71,7 +71,7 @@ h1 {
 
 h2 {
     font-size: 180%;
-    word-spacing: 2px;
+    word-spacing: 12px;
     text-align: center;
     margin-bottom: 30px;
     letter-spacing: 1px;
@@ -102,6 +102,7 @@ h2:after {
 .box p {
     font-size: 90%;
     line-height: 145%;
+    text-align: right;
 }
 
 
@@ -111,6 +112,7 @@ h2:after {
     display: block;
     color: #e67e22;
     margin-bottom: 10px;
+    text-align: center;
 }
 
 .icon-small {
@@ -335,14 +337,14 @@ body {
 }
 
 .meal-photo img {
-    opacity: 0.7;
+    opacity: 0.9;
     width: 100%;
-    height: auto;
+    height: 200px;
     -webkit-transform: scale(1.15);
     -ms-transform: scale(1.15);
     transform: scale(1.15);
     -webkit-transition: -webkit-transform 0.5s, opacity 0.5s;
-    transition: transform 0.5s, opacity 0.5s;
+    transition: transform 0.3s, opacity 0.3s;
 }
 
 .meal-photo img:hover {
