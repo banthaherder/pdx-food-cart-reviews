@@ -10,6 +10,15 @@ class Cart < ActiveRecord::Base
     self.photos=(@@client.spot(self.gp_id).photos.sample(1).first.fetch_url(800))
   end
 
+  def average_rating()
+    add_rating = 0
+    self.reviews.each do |review|
+      add_rating += review.rating
+    end
+    average_rating = add_rating / self.reviews.length
+  end
+
+
 private
   def get_name()
     self.name=(@@client.spot(self.gp_id).name.to_s)
@@ -42,4 +51,5 @@ private
   def get_lng()
     self.lng=(@@client.spot(self.gp_id).lng)
   end
+
 end
