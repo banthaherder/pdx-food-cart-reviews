@@ -77,7 +77,7 @@ end
 
 
 get '/results/:search' do
-  @results = GooglePlaces::Client.new('AIzaSyAaN83hTHVzlAMvkBd4oc3NGFm4YQ-K71I').spots_by_query(params[:search].split(" ").join("_") + ' food cart Portland Oregon')
+  @results = GooglePlaces::Client.new('AIzaSyBb-6lyykgnZhSEv_FdW6BWi_7BjznhOmw').spots_by_query(params[:search].split(" ").join("_") + ' food cart Portland Oregon')
   erb :results
 end
 
