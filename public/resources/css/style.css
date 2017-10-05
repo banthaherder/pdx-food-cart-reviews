@@ -744,6 +744,12 @@ ul {
 .food-album{
   max-width: 350px;
 }
+
+.welcome{
+  padding-left: 155px;
+  /*position: absolute;
+  float: right;*/
+}
 /* Fancy Stars */
 
 div.stars {
