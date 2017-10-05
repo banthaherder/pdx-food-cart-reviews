@@ -3,9 +3,6 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-
-        <!-- This is for the page itself: -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
         <link rel="stylesheet" type="text/css" href="/vendors/css/normalize.css">
@@ -17,17 +14,11 @@
         <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
         <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500|Muli:400,700,900" rel="stylesheet">
         <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,300italic' rel='stylesheet' type='text/css'>
-
-        <!-- JAVI MAP LAND -->
-        <script src='/scripts.js'></script>
-
-
-
         <title>PDX Eats</title>
 
     </head>
     <body>
-          <div class="container-fluid">
+          
 
             <nav>
                 <div class="row">
@@ -36,8 +27,9 @@
                     <img src="/resources/img/logo.png" alt="Omnifood logo" class="logo-black"> -->
                     <ul class="main-nav js--main-nav">
                         <li><a href="/">Home</a></li>
-                        <li><a href="/carts">Carts</a></li>
-                        <li><a href="/sign_in">Sign In</a></li>
+                        <li><a href="/cart/search">Find a Cart</a></li>
+                        <li><a href="/cart">Review a Cart</a></li>
+                        <li><a href="/sign_in">Sign in</a></li>
                     </ul>
                     <a class="mobile-nav-icon js--nav-icon"><i class="ion-navicon-round"></i></a>
                 </div>
@@ -45,8 +37,7 @@
 
               <br>
                 <%= yield %>
-            </div>
-            <div class="space"></div>
+
 
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>

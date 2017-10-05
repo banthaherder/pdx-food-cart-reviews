@@ -167,6 +167,9 @@ input[type=submit] {
     margin-right: 15px;
 }
 
+.btn-orange {
+  background-color: #e67e22;
+}
 .btn-ghost:link,
 .btn-ghost:visited {
     border: 1px solid #e67e22;
@@ -687,11 +690,22 @@ footer p {
   padding: 5px;
   padding-top: 18px;
   height: 74%;
+  /*border-bottom: 2px solid white;*/
   /*outline:  white solid thin;*/
 
-  border-bottom: 2px solid white
+  -webkit-transition: .5s ease;
+  transition: .5s ease;
   /*padding-bottom: 3px*/
 }
+.pdx-eats:hover{
+  color: #e67e22;
+  /*border-color: #e67e22;*/
+  padding-left: 6px;
+  -webkit-transition: .5s ease;
+  transition: .5s ease;
+
+}
+
 
 
 .transparent{
