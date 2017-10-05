@@ -1,6 +1,7 @@
 <h1><%= @cart.name%></h1>
 <img class="food-album" src="<%= @cart.pic %>">
 <h3 class="white-text" ><%=@cart.tag%></h3>
+<p class = "white-text">Average Rating: <%= @cart.average_rating %> / 5</p>
 <ul>
 <% if @cart.hours %>
   <% eval(@cart.hours).each do |d| %>

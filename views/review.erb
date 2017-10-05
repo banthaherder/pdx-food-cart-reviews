@@ -1,6 +1,7 @@
 <h1><%= @review.cart.name %></h1>
 <div class = "white-text">
   <h3><strong><%= @review.food_name %></strong></h3>
+  <p><%= ' ⭐' * @review.rating %></p>
   <p><%= @review.price %></p>
   <p><%= @review.review %></p>
   <p><em>Reviewed by <%=@review.user.name%></em></p>
