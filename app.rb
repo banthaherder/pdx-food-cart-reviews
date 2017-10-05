@@ -64,7 +64,6 @@ end
 get('/cart/:id') do
   @cart = Cart.find(params[:id])
   @reviews = @cart.reviews
-  # binding.pry
   erb(:cart_reviews)
 end
 
@@ -93,11 +92,15 @@ end
 
 post('/review/:cart_id') do
   if current_user
-    Review.create(food_name: params['food'], price: params['price'], review: params['review'], cart_id: params['cart_id'], rating: params['rating'], user_id: current_user.id)
-    @cart = Cart.find(params['cart_id'])
-    @reviews = @cart.reviews
-    @carts = Cart.all
-    erb(:cart)
+    new_review = Review.new(food_name: params['food'], price: params['price'], review: params['review'], cart_id: params['cart_id'], rating: params['rating'], user_id: current_user.id)
+    if new_review.save
+      @cart = Cart.find(params['cart_id'])
+      @reviews = @cart.reviews
+      @carts = Cart.all
+      erb(:cart)
+    else
+      redirect "/review/#{:cart_id}"
+    end
   else
     redirect '/sign_in'
   end
@@ -111,6 +114,10 @@ end
 post '/user' do
   name = params['first_name'] + " " + params['last_name']
   user = User.new(name: name, email: params['email'], username: params['username'], pass: params['password'])
-  user.save
-  redirect '/'
+  if user.save
+    redirect '/'
+  else
+    @errors = user.errors.full_messages()
+    erb :sign_in
+  end
 end
