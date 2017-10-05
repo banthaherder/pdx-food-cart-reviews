@@ -25,8 +25,10 @@
           <ul class="main-nav js--main-nav">
             <li><a href="/carts">Carts</a></li>
             <li><%if current_user == nil%><a href="/sign_in"> Sign In</a> <%else%><a href="/<%= current_user.id %>/reviews">My Reviews</a></li> <li><a href = '/sign_out'>Sign Out</a><% end %></li>
+            <li class = "white-text welcome">Welcome, <% if current_user %> <%= current_user.name %> <% else %> Please log in! <% end %></li>
           </ul>
           <a class="mobile-nav-icon js--nav-icon"><i class="ion-navicon-round"></i></a>
+
       </div>
     </nav>
     <div class="container-fluid">
