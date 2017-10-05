@@ -686,6 +686,8 @@ footer p {
   color: white;
 }
 
+
+
 .orange-text {
   color: #e67e22
 }
@@ -744,6 +746,44 @@ ul {
 .food-album{
   max-width: 350px;
 }
+
+#my-reviews{
+opacity: .90;
+  align-items: center;
+  padding: 3%;
+}
+.list-group-item{
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0);
+
+}
+
+.horizontal-space{
+  /*margin-left: 5px;*/
+}
+
+#delete:hover{
+  -webkit-transition: .5s ease;
+  transition: .5s ease;
+  color: red;
+}
+
+#update{
+
+  right: 120px;
+
+
+}
+
+.updated-at{
+  color: white;
+  /*padding-left: 33%;
+  padding-right: 33%;*/
+  /*align-self: center;*/
+  /*position: absolute;*/
+
+}
+
 /* Fancy Stars */
 
 div.stars {
