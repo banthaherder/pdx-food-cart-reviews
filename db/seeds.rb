@@ -5,7 +5,7 @@ class Cart < ActiveRecord::Base
   has_many :users, through: :reviews
   # AIzaSyAaN83hTHVzlAMvkBd4oc3NGFm4YQ-K71I
   # 'AIzaSyDGlceW7yZG05uKfRqWqTHC3mg8Tlfw54w'
-  @@client = GooglePlaces::Client.new('AIzaSyDGlceW7yZG05uKfRqWqTHC3mg8Tlfw54w')
+  @@client = GooglePlaces::Client.new('AIzaSyAaN83hTHVzlAMvkBd4oc3NGFm4YQ-K71I')
   before_save(:get_name, :get_hours, :get_photos, :get_phone_number, :get_address, :get_lat, :get_lng)
   def pic()
     # photos.split(",").sample(1).first.fetch_url(800)
