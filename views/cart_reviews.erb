@@ -2,9 +2,11 @@
 <img class="food-album" src="<%= @cart.pic %>">
 <h3 class="white-text" ><%=@cart.tag%></h3>
 <ul>
+<% if @cart.hours %>
   <% eval(@cart.hours).each do |d| %>
     <li class="white-text"><%= d %></li>
   <% end %>
+<% end %>
 </ul>
 <% if @reviews.any? %>
 <ul class="white-text">

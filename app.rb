@@ -64,6 +64,7 @@ end
 get('/cart/:id') do
   @cart = Cart.find(params[:id])
   @reviews = @cart.reviews
+  # binding.pry
   erb(:cart_reviews)
 end
 
