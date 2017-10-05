@@ -24,7 +24,7 @@
           <img src="/resources/img/logo.png" alt="Omnifood logo" class="logo-black"> -->
           <ul class="main-nav js--main-nav">
             <li><a href="/carts">Carts</a></li>
-            <li><%if current_user == nil%><a href="/sign_in"> Sign In</a> <%else%> <a href = '/sign_out'>Sign Out</a> <% end %></li>
+            <li><%if current_user == nil%><a href="/sign_in"> Sign In</a> <%else%><a href="/<%= current_user.id %>/reviews">My Reviews</a></li> <li><a href = '/sign_out'>Sign Out</a><% end %></li>
           </ul>
           <a class="mobile-nav-icon js--nav-icon"><i class="ion-navicon-round"></i></a>
       </div>

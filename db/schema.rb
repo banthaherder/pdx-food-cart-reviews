@@ -26,6 +26,8 @@ ActiveRecord::Schema.define(version: 20171002173013) do
     t.string "address"
     t.string "lat"
     t.string "lng"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "reviews", force: :cascade do |t|
@@ -36,6 +38,8 @@ ActiveRecord::Schema.define(version: 20171002173013) do
     t.integer "rating"
     t.integer "reported_count"
     t.string "review"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
@@ -45,6 +49,8 @@ ActiveRecord::Schema.define(version: 20171002173013) do
     t.string "email"
     t.boolean "is_confirmed"
     t.boolean "is_admin"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end

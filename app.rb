@@ -111,6 +111,41 @@ get('/review/view/:review_id') do
   erb(:review)
 end
 
+get '/:user_id/reviews' do
+  @user = User.find(params[:user_id])
+  erb :my_reviews
+end
+
+get '/edit/:review_id' do
+
+end
+
+patch '/edit/:review_id' do
+  if current_user
+    review = Review.find(params[:review_id])
+    review.update(food_name: params['food'], price: params['price'], review: params['review'], rating: params['rating'])
+    redirect back
+  else
+    redirect '/sign_in'
+  end
+end
+
+get '/delete/:review_id' do
+  @review = Review.find(params[:review_id])
+  erb :delete_review
+end
+
+delete '/delete/:review_id' do
+  review = Review.find(params[:review_id])
+  user_id = review.user_id
+  if current_user
+    Review.find(params[:review_id]).destroy
+    redirect "/#{user_id}/reviews"
+  else
+    redirect '/sign_in'
+  end
+end
+
 post '/user' do
   name = params['first_name'] + " " + params['last_name']
   user = User.new(name: name, email: params['email'], username: params['username'], pass: params['password'])

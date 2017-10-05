@@ -1,0 +1,6 @@
+<h1>This will permanently delete your review! Proceed with caution!</h1>
+<form action="/delete/<%= @review.id %>" method="post">
+  <input name="_method" type="hidden" value="delete">
+  <button class="btn btn-danger" type="submit" id="<%= @review.id %>">Delete Review</button>
+  <a href="/<%= @review.user_id %>/reviews"<button class="btn btn-info" type="button">Cancel</button></a>
+</form>
