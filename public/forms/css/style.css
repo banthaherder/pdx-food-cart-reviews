@@ -97,8 +97,8 @@ label .req {
 }
 
 label.active {
-  -webkit-transform: translateY(50px);
-          transform: translateY(50px);
+  -webkit-transform: translateY(-30px);
+          transform: translateY(-30px);
   left: 2px;
   font-size: 14px;
 }

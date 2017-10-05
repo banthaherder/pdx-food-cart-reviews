@@ -1,7 +1,8 @@
 
 
-<div class="container">
-<h1>Carts</h1> 
+<div class="container card-inverse" style="background-color: #333; border-color: #333; border-radius: 15px;">
+<br>
+<h1>Carts</h1>
   <form action="/cart/:id" method="post">
     <div class="form-group">
       <label for="cart" class="white-text">Select an existing cart:</label>
@@ -14,11 +15,12 @@
     <button class="btn btn-orange white-text" type="submit">Select</button>
   </form>
   <br>
-  <h3 class="white-text">OR</h3>
+  <label for="seacg" class="white-text">Search all of Portland</label>
   <form action="/results" method="post">
     <div class="form-group">
       <input class="form-control" name="search" type="text"/>
     </div>
     <button class="btn btn-orange white-text" type="submit">Search</button>
   </form>
+  <br><br>
 </div>
