@@ -12,14 +12,37 @@ class Cart < ActiveRecord::Base
     self.photos=(@@client.spot(self.gp_id).photos.sample(1).first.fetch_url(800))
   end
 
+  def average_rating()
+    add_rating = 0
+    self.reviews.each do |review|
+      add_rating += review.rating
+    end
+    if add_rating != 0
+      average_rating = add_rating / self.reviews.length
+    else
+      average_rating = "No ratings yet"
+    end
+  end
+
+
 private
   def get_name()
     self.name=(@@client.spot(self.gp_id).name.to_s)
   end
 
   def get_hours()
-    if @@client.spot(self.gp_id).opening_hours != nil
-      self.hours=(@@client.spot(self.gp_id).opening_hours["weekday_text"])
+    all_hours = @@client.spot(self.gp_id).opening_hours
+    if all_hours != nil
+      all_hours["weekday_text"].each do |d|
+        d.gsub!("Monday:", "M:")
+        d.gsub!("Tuesday:", "T:")
+        d.gsub!("Wednesday:", "W:")
+        d.gsub!("Thursday:", "TH:")
+        d.gsub!("Friday:", "F:")
+        d.gsub!("Saturday:", "SAT:")
+        d.gsub!("Sunday:", "SUN:")
+      end
+      self.hours=(all_hours["weekday_text"])
     else
       self.hours=(["Business hours not provided."])
     end
@@ -44,6 +67,7 @@ private
   def get_lng()
     self.lng=(@@client.spot(self.gp_id).lng)
   end
+
 end
 
 class Review < ActiveRecord::Base

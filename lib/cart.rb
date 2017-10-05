@@ -15,7 +15,11 @@ class Cart < ActiveRecord::Base
     self.reviews.each do |review|
       add_rating += review.rating
     end
-    average_rating = add_rating / self.reviews.length
+    if add_rating != 0
+      average_rating = add_rating / self.reviews.length
+    else
+      average_rating = "No ratings yet"
+    end
   end
 
 
@@ -25,8 +29,18 @@ private
   end
 
   def get_hours()
-    if @@client.spot(self.gp_id).opening_hours != nil
-      self.hours=(@@client.spot(self.gp_id).opening_hours["weekday_text"])
+    all_hours = @@client.spot(self.gp_id).opening_hours
+    if all_hours != nil
+      all_hours["weekday_text"].each do |d|
+        d.gsub!("Monday:", "M:")
+        d.gsub!("Tuesday:", "T:")
+        d.gsub!("Wednesday:", "W:")
+        d.gsub!("Thursday:", "TH:")
+        d.gsub!("Friday:", "F:")
+        d.gsub!("Saturday:", "SAT:")
+        d.gsub!("Sunday:", "SUN:")
+      end
+      self.hours=(all_hours["weekday_text"])
     else
       self.hours=(["Business hours not provided."])
     end
