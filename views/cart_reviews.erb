@@ -1,23 +1,55 @@
-<h1><%= @cart.name%></h1>
-<img class="food-album" src="<%= @cart.pic %>">
-<h3 class="white-text" ><%=@cart.tag%></h3>
-<ul>
-<% if @cart.hours %>
-  <% eval(@cart.hours).each do |d| %>
-    <li class="white-text"><%= d %></li>
-  <% end %>
-<% end %>
-</ul>
-<% if @reviews.any? %>
-<ul class="white-text">
-  <% @reviews.each do |review| %>
-    <li><a href = "/review/view/<%=review.id%>"><%= review.food_name %></a></li>
-    <li><%= review.price %></li>
-      <br>
-  <% end %>
-</ul>
-<% else %>
-<h3>No reviews yet, Add one!</h3>
-<%end%>
+<div class="container ">
 
-<a class="btn btn-ghost" href = "/review/<%=@cart.id%>">Add a review!</a>
+  <h1><%= @cart.name%></h1>
+  <h3 class="white-text"><a class="no-underline" href="/results/<%=@cart.tag%>"> <%=@cart.tag%></a></h3>
+  <div class="container card-inverse" style="background-color: #333; border-color: #333; border-radius: 15px;">
+    <br>
+
+    <div class="row">
+
+      <img class="food-album" style="border-radius: 15px;" src="<%= @cart.pic %>">
+
+      <div class="col-4 col-md-auto">
+        <div class="row justify-content-md-center">
+          <ul>
+            <div>
+              <% if @cart.hours %>
+              <% eval(@cart.hours).each do |d| %>
+              <li class="white-text"><%= d %></li>
+              <% end %>
+              <% end %>
+            </div>
+          </ul>
+        </div>
+      </div>
+      <div>
+        <div class="col-12">
+          <div class="row">
+
+            <% if @reviews.any? %>
+            <ul class="white-text">
+              <% @reviews.each do |review| %>
+              <li>
+                <a class="no-underline" href="/review/view/<%=review.id%>"><%= review.food_name %></a>
+              </li>
+              <li><%= review.price %></li>
+              <br>
+              <% end %>
+            </ul>
+          <% else %>
+            <h4 class="white-text">No reviews yet, Add one!</h4>
+            <%end%>
+            <a class="btn btn-ghost" href="/review/<%=@cart.id%>">Add a review!</a>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <br>
+
+  </div>
+
+</div>

@@ -740,7 +740,8 @@ ul {
 }
 
 .food-album{
-  max-width: 350px;
+  max-width: 250px;
+  max-height: 250px;
 }
 /* Fancy Stars */
 
