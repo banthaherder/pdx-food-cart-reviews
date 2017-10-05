@@ -1,6 +1,14 @@
-<h3 class="text-white">Results:</h3>
+
+<h3 class="text-white text-center">Results:</h3>
+<div class="container card-inverse" style="background-color: #333; border-color: #333; border-radius: 15px;">
+
+
 <ul>
   <%  @results.each do |result| %>
-    <li><a href="/cart_checker/<%= result.place_id %>"><%= result.name %></a></li>
+  <br>
+    <li class="text-center"><a href="/cart_checker/<%= result.place_id %>" class="no-underline"><%= result.name %></a></li>
   <% end %>
+  <br>
 </ul>
+
+</div>
