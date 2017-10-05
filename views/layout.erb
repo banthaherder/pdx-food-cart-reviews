@@ -1,44 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
-        <link rel="stylesheet" type="text/css" href="/vendors/css/normalize.css">
-        <link rel="stylesheet" type="text/css" href="/vendors/css/grid.css">
-        <link rel="stylesheet" type="text/css" href="/vendors/css/ionicons.min.css">
-        <link rel="stylesheet" type="text/css" href="/vendors/css/animate.css">
-        <link rel="stylesheet" type="text/css" href="/resources/css/style.css">
-        <link rel="stylesheet" type="text/css" href="/resources/css/queries.css">
-        <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
-        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500|Muli:400,700,900" rel="stylesheet">
-        <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,300italic' rel='stylesheet' type='text/css'>
-        <title>PDX Eats</title>
-
-    </head>
-    <body>
-          
-
-            <nav>
-                <div class="row">
-                  <h1 class="pdx-eats">PDX Eats</h1>
-                    <!-- <img src="/resources/img/logo-white.png" alt="Omnifood logo" class="logo">
-                    <img src="/resources/img/logo.png" alt="Omnifood logo" class="logo-black"> -->
-                    <ul class="main-nav js--main-nav">
-                        <li><a href="/">Home</a></li>
-                        <li><a href="/cart/search">Find a Cart</a></li>
-                        <li><a href="/cart">Review a Cart</a></li>
-                        <li><a href="/sign_in">Sign in</a></li>
-                    </ul>
-                    <a class="mobile-nav-icon js--nav-icon"><i class="ion-navicon-round"></i></a>
-                </div>
-            </nav>
-
-              <br>
-                <%= yield %>
-
-
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="/vendors/css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="/vendors/css/grid.css">
+    <link rel="stylesheet" type="text/css" href="/vendors/css/ionicons.min.css">
+    <link rel="stylesheet" type="text/css" href="/vendors/css/animate.css">
+    <link rel="stylesheet" type="text/css" href="/resources/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/resources/css/queries.css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500|Muli:400,700,900" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,300italic' rel='stylesheet' type='text/css'>
+    <title>PDX Eats</title>
+  </head>
+  <body>
+    <nav>
+      <div class="row">
+        <a class="inverse no-underline" href="/"><h1 class="pdx-eats">PDX EATS</h1></a>
+          <!-- <img src="/resources/img/logo-white.png" alt="Omnifood logo" class="logo">
+          <img src="/resources/img/logo.png" alt="Omnifood logo" class="logo-black"> -->
+          <ul class="main-nav js--main-nav">
+            <li><a href="/carts">Carts</a></li>
+            <li><a href="/sign_in">Sign In</a></li>
+          </ul>
+          <a class="mobile-nav-icon js--nav-icon"><i class="ion-navicon-round"></i></a>
+      </div>
+    </nav>
+    <div class="container-fluid">
+      <br/>
+      <%= yield %>
+    </div>
+    <div class="space"></div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <script src="//cdn.jsdelivr.net/respond/1.4.2/respond.min.js"></script>
@@ -46,7 +41,6 @@
     <script src="//cdn.jsdelivr.net/selectivizr/1.0.3b/selectivizr.min.js"></script>
     <script src="/vendors/js/jquery.waypoints.min.js"></script>
     <script src="/resources/js/script.js"></script>
-
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -55,9 +49,6 @@
 
       ga('create', 'UA-61026110-2', 'auto');
       ga('send', 'pageview');
-
     </script>
-
-    </body>
-
+  </body>
 </html>
