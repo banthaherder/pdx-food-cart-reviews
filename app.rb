@@ -117,14 +117,18 @@ get '/:user_id/reviews' do
 end
 
 get '/edit/:review_id' do
-
+  @review = Review.find(params[:review_id])
+  erb :update_review
 end
 
 patch '/edit/:review_id' do
   if current_user
     review = Review.find(params[:review_id])
-    review.update(food_name: params['food'], price: params['price'], review: params['review'], rating: params['rating'])
-    redirect back
+    if params['rating'] == nil
+      params['rating'] = review.rating
+    end
+      review.update(food_name: params['food'], price: params['price'], review: params['review'], rating: params['rating'])
+      redirect "/#{current_user.id}/reviews"
   else
     redirect '/sign_in'
   end
