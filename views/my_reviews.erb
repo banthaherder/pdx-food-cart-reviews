@@ -1,9 +1,21 @@
 <!-- If there are any reviews for a given user then list them here -->
 <% Time.zone = ActiveSupport::TimeZone.new('Pacific/Honolulu') %>
-<% if @user.reviews.any? %>
-  <ul>
-    <% @user.reviews.each do |review| %>
-      <li><a href="/cart/<%= review.cart.id %>"><%= review.cart.name %></a> | Updated <%= review.created_at.strftime("%m/%d/%Y") +  " at " + review.updated_at.strftime("%l:%M %p") %> <a href="/edit/<%= review.id %>">Update</a> <a href="/delete/<%= review.id %>">Delete</a></li>
-    <% end %>
-  </ul>
-<% end %>
+<div id="my-reviews" class="container card-inverse" style="background-color: #333; border-color: #333; border-radius: 15px;">
+
+  <% if @user.reviews.any? %>
+    <ul class="list-group">
+      <label for="">Your Reviews:</label>
+      <% @user.reviews.each do |review| %>
+        <div class="list-group-item">
+          <li class=""><a href="/cart/<%= review.cart.id %>" class="no-underline"><%= review.cart.name %></a>
+            <span class="updated-at">| Updated <%= review.created_at.strftime("%m/%d/%Y") +  " at " + review.updated_at.strftime("%l:%M %p")+ "  | " %> </span>
+
+            <a id="update" class="no-underline" href="/edit/<%= review.id %>">Update</a>
+
+            <a  class="no-underline" href="/delete/<%= review.id %>"><span id="delete" class="white-text">Delete</span></a></li>
+        </div>
+      <% end %>
+    </ul>
+  <% end %>
+
+</div>
