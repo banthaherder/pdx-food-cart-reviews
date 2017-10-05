@@ -684,6 +684,9 @@ footer p {
   color: white;
 }
 
+.orange-text {
+  color: #e67e22
+}
 .pdx-eats{
   margin-top: 15px;
   /*text-decoration: underline;*/
