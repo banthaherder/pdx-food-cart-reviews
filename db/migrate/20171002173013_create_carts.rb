@@ -11,8 +11,8 @@ class CreateCarts < ActiveRecord::Migration[5.1]
       t.column(:address, :string)
       t.column(:lat, :string)
       t.column(:lng, :string)
-      
-      t.timestamp
+
+      t.timestamps
     end
   end
 end

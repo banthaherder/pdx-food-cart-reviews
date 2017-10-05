@@ -8,7 +8,7 @@ class CreateUsers < ActiveRecord::Migration[5.1]
       t.column(:is_confirmed, :boolean)
       t.column(:is_admin, :boolean)
 
-      t.timestamp
+      t.timestamps
     end
   end
 end

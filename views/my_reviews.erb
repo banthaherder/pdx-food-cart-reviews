@@ -1,0 +1,9 @@
+<!-- If there are any reviews for a given user then list them here -->
+<% Time.zone = ActiveSupport::TimeZone.new('Pacific/Honolulu') %>
+<% if @user.reviews.any? %>
+  <ul>
+    <% @user.reviews.each do |review| %>
+      <li><%= review.cart.name %> | <%= review.created_at.strftime("%m/%d/%Y") +  " at " + review.created_at.strftime("%l:%M %p") %> <a href="/edit/<%= review.id %>">Update</a> <a href="/delete/<%= review.id %>">Delete</a></li>
+    <% end %>
+  </ul>
+<% end %>
