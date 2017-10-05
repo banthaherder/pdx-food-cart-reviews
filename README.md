@@ -1,4 +1,4 @@
-# PDX eats in the food carts
+# PDX Eats
 
 Home Screen
 
@@ -23,20 +23,22 @@ Database schema
 
 ## Getting Started
 
-This is placeholder text
+#### Local
+* Clone the project
+* In the project directory execute `bundle`
+* After making sure your postges server is running, execute `rake db:setup`
+* `ruby app.rb` will start the server
+* Visit `localhost:4567` to view the site
 
+#### Live
+* Visit [PDXEats](http://pdxeats.herokuapp.com)
 
 ## Description
 
-A webapp where you can review food carts and find food carts.
+A webapp where users can create accounts, write reviews, and view other user's reviews.
 
-## Built With
-
-
-- [Tech](link to tech) - Name of tech
-- [Tech](link to tech) - Name of tech
-- [Atom](https://atom.io/) - Text Editor
-- [Epicodus Curriculum](https://www.learnhowtoprogram.com/courses) - Curriculum
+### Technologies Used
+_HTML, CSS, Bootstrap, Sinatra, Ruby, Postgres, :octocat:_
 
 ## Author
 
